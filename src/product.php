@@ -1,18 +1,19 @@
 <?php require 'db-connect.php'; ?>
 <?php require 'header.php'; ?>
-<?php require 'menu.php'; ?>
+<a href="menu.php">メニューに戻る</a>
 <hr>
 <?php
 $pdo=new PDO($connect,USER,PASS);
+$sql=$pdo->query('select * from Shinkansen');
 foreach($sql as $row){
-    $id=$row['id'];
-    echo '<tr>';
-    echo '<td>',$id,'</td>';
-    echo '<td>';
-    echo '<a href="detail.php?id=',$id,'">',$row['name'],'</a>';
-    echo '</td>';
-    echo '<td>',$row['price'],'</td>';
-    echo '</tr>';
+    echo $row['name'];
+    echo $row['explanation'];
+    echo $row['image'];
+    echo '【使用車両】<br>',$row['vehicli'];
+    echo '【停車駅】<br>',$row['stop'];
+    echo '【座席の種類】<br>',$row['zaseki'];
+    echo '【コンセントの有無】<br>',$row['outlet'];
+    echo '【車内販売】<br>',$row['hanbai'];
 }
 ?>
 <?php require 'footer.php'; ?>
