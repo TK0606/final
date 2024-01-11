@@ -1,5 +1,6 @@
 <?php require 'db-connect.php'; ?>
 <?php require 'header.php'; ?>
+<link rel="stylesheet" href="../css/style.css">
 <a href="menu.php">メニューに戻る</a>
 <hr>
 <?php
