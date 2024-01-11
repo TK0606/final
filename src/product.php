@@ -8,7 +8,7 @@ $sql=$pdo->query('select * from Shinkansen');
 foreach($sql as $row){
     echo $row['name'];
     echo $row['explanation'];
-    echo $row['image'];
+    echo ' style=text-decoration:none;><img src="../img/',$row['image'];
     echo '【使用車両】<br>',$row['vehicli'];
     echo '【停車駅】<br>',$row['stop'];
     echo '【座席の種類】<br>',$row['zaseki'];
