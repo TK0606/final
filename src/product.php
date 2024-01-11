@@ -7,13 +7,19 @@
 $pdo=new PDO($connect,USER,PASS);
 $sql=$pdo->query('select * from Shinkansen');
 foreach($sql as $row){
-    echo '<p class=futosa>',$row['name'],'</p><br><br>';
+    echo '<p class=futosa>',$row['name'],'</p><br>';
     echo $row['explanation'],'<br>';
+    echo '<br>';
     echo '<img src="../img/',$row['image'],'" alt="', $row['name'],'"><br>';
+    echo '<br>';
     echo '【使用車両】<br>',$row['vehicle'],'<br>';
+    echo '<br>';
     echo '【停車駅】<br>',$row['stop'],'<br>';
+    echo '<br>';
     echo '【座席の種類】<br>',$row['zaseki'],'<br>';
+    echo '<br>';
     echo '【コンセントの有無】<br>',$row['outlet'],'<br>';
+    echo '<br>';
     echo '【車内販売】<br>',$row['hanbai'],'<br>';
 }
 ?>
