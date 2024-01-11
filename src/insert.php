@@ -1,5 +1,6 @@
 <?php require 'header.php'; ?>
 <a href="menu.php">メニューに戻る</a>
+<hr>
 名前<input type="text" name="name" required><br>
 説明<textarea name="explanation" required></textarea><br>
 画像<input type="file" name="upload_image" accept="image/*" required><br>
