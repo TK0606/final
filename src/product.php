@@ -9,7 +9,7 @@ foreach($sql as $row){
     echo $row['name'],'<br>';
     echo $row['explanation'],'<br>';
     echo ' style=text-decoration:none;><img src="../img/',$row['image'],'" alt="', $row['name'],'<br>';
-    echo '【使用車両】<br>',$row['vehicli'],'<br>';
+    echo '【使用車両】<br>',$row['vehicle'],'<br>';
     echo '【停車駅】<br>',$row['stop'],'<br>';
     echo '【座席の種類】<br>',$row['zaseki'],'<br>';
     echo '【コンセントの有無】<br>',$row['outlet'],'<br>';
