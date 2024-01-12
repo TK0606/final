@@ -18,7 +18,7 @@ $sql=$pdo->query('select * from Category');
 <option value="" selected hidden required>選択してください</option>
 <?php 
 foreach($sql as $row){
-    echo '<option value="',$row['category_id'],'">',$row['category_name'],'</option></select><br>'
+    echo '<option value="',$row['category_id'],'">',$row['category_name'],'</option></select><br>';
 }
 ?>
 <input type="submit" value="登録">
