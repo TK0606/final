@@ -1,5 +1,5 @@
     <?php require 'header.php'; ?>
-	<?php require '../php_init/db-connect.php' ?>
+	<?php require 'db-connect.php'; ?>
 	<?php
 	
 	$sql=$db->prepare('insert into Shinkansen Values (NULL, ?, ?, ?, ?, ?, ?, ?, ?, ?)');
