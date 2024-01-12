@@ -21,5 +21,5 @@ foreach($sql as $row){
     echo '<option value="',$row['category_id'],'">',$row['category_name'],'</option></select><br>';
 }
 ?>
-<input type="submit" value="登録">
+<input type="button" onclick="location.href='insert-output.php'" value="登録する">
 <?php require 'header.php'; ?>
