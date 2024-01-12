@@ -12,6 +12,7 @@
     // 一応データをパースする
     $data[$i] = htmlspecialchars(trim(urldecode(mb_convert_encoding($value, 'UTF-8', 'auto'))));
     $i++;
+    }
     echo '<h1>登録しました</h1>';
 
 
@@ -24,7 +25,6 @@
         echo 'コンセントの有無：', $_POST['outlet'],'<br>';
         echo '車内販売：', $_POST['hanbai'],'<br>';
         echo 'カテゴリ：', $data[$i],'<br>';
-    }
     
     ?>
 	<br><br><br>
