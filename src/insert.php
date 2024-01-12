@@ -2,6 +2,7 @@
 <?php require 'header.php'; ?>
 <a href="menu.php">メニューに戻る</a>
 <hr>
+<form action="insert-output.php" method="post" enctype="multipart/form-data">
 <?php
 $pdo=new PDO($connect,USER,PASS);
 $sql=$pdo->query('select * from Category');
@@ -21,5 +22,5 @@ foreach($sql as $row){
     echo '<option value="',$row['category_id'],'">',$row['category_name'],'</option></select><br>';
 }
 ?>
-<input type="button" onclick="location.href='insert-output.php'" value="登録する">
+<input type="submit" value="登録">
 <?php require 'header.php'; ?>
