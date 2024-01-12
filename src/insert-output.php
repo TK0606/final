@@ -3,8 +3,8 @@
 	<?php
 	$pdo=new PDO($connect,USER,PASS);
 	$sql=$pdo->prepare('insert into Shinkansen Values (NULL, ?, ?, ?, ?, ?, ?, ?, ?, ?)');
-	$sql->execute([$_POST["name"], $_POST["explanation"], $_POST["upload_image"], $_POST["vehicle"], 
-        $_POST["stop"], $_POST["zaseki"], $_POST["outlet"], $_POST["hanbai"], $_POST["category"]]);
+	$sql->execute([$_POST['name'], $_POST['explanation'], $_POST['upload_image'], $_POST['vehicle'], 
+        $_POST['stop'], $_POST['zaseki'], $_POST['outlet'], $_POST['hanbai'], $_POST['category']]);
     $getfrommysql = mysql_fetch_assoc(mysql_query('SELECT * FROM Category'));
     $data = array();
     $i = 1;
@@ -16,7 +16,7 @@
 
 
 		echo '名前：', $_POST['name'],'<br>';
-		echo '説明：', $_POST["explanation"] ,'<br>';
+		echo '説明：', $_POST['explanation'] ,'<br>';
 		echo '画像：', $_POST['upload_image'],'<br>';
 		echo '使用車両：', $_POST['vehicle'],'<br>';
 		echo '停車駅：', $_POST['stop'],'<br>';
