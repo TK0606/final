@@ -1,8 +1,8 @@
     <?php require 'header.php'; ?>
 	<?php require 'db-connect.php'; ?>
 	<?php
-	
-	$sql=$db->prepare('insert into Shinkansen Values (NULL, ?, ?, ?, ?, ?, ?, ?, ?, ?)');
+	$pdo=new PDO($connect,USER,PASS);
+	$sql=$pdo->prepare('insert into Shinkansen Values (NULL, ?, ?, ?, ?, ?, ?, ?, ?, ?)');
 	$sql->execute([$_POST["name"], $_POST["explanation"], $_POST["upload_image"], $_POST["vehicle"], 
         $_POST["stop"], $_POST["zaseki"], $_POST["outlet"], $_POST["hanbai"], $_POST["category"]]);
     $getfrommysql = mysql_fetch_assoc(mysql_query('SELECT * FROM Category'));
