@@ -10,3 +10,14 @@ INSERT INTO Shinkansen VALUES
 
 INSERT INTO Category VALUES
 (null,'北海道新幹線')
+
+INSERT INTO Category VALUES
+(null,'東北新幹線'),
+(null,'秋田新幹線'),
+(null,'山形新幹線'),
+(null,'上越新幹線'),
+(null,'東海道新幹線'),
+(null,'北陸新幹線'),
+(null,'山陽新幹線'),
+(null,'九州新幹線'),
+(null,'西九州新幹線')
