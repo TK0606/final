@@ -2,22 +2,26 @@
 	<?php require 'db-connect.php'; ?>
 	<?php
 	$pdo=new PDO($connect,USER,PASS);
-    $uploadfile=$_FILES['upload_image']['name'];
+    $uploaddir = '../img/';
+    $image_name=$_FILES['upload_image']['name'];
+    $uploadfile = $uploaddir . $image_name;
     move_uploaded_file($_FILES['upload_image']['tmp_name'], $uploadfile);
 	$sql=$pdo->prepare('insert into Shinkansen Values (NULL, ?, ?, ?, ?, ?, ?, ?, ?, ?)');
 	$sql->execute([$_POST['name'], $_POST['explanation'], $uploadfile, $_POST['vehicle'], 
                     $_POST['stop'], $_POST['zaseki'], $_POST['outlet'], $_POST['hanbai'], $_POST['category']]);
+    $res=$pdo->prepare('select category_name from Category where category_id = ?');
+    $res->execute([$_POST['category']]);
     echo '<h1>登録しました</h1>';
-    
+
 		echo '名前：', $_POST['name'],'<br>';
 		echo '説明：', $_POST['explanation'] ,'<br>';
-		echo '画像：', $_POST['upload_image'],'<br>';
+		echo '画像：', $uploadfile ,'<br>';
 		echo '使用車両：', $_POST['vehicle'],'<br>';
 		echo '停車駅：', $_POST['stop'],'<br>';
         echo '座席の種類：', $_POST['zaseki'],'<br>';
         echo 'コンセントの有無：', $_POST['outlet'],'<br>';
         echo '車内販売：', $_POST['hanbai'],'<br>';
-        echo 'カテゴリ：', $_POST['category'],'<br>';
+        echo 'カテゴリ：', $res['category_name'],'<br>';
     
     ?>
 	<br><br><br>
