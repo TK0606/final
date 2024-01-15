@@ -2,8 +2,10 @@
 	<?php require 'db-connect.php'; ?>
 	<?php
 	$pdo=new PDO($connect,USER,PASS);
+    $uploadfile=$_FILES['upload_image']['name'];
+    move_uploaded_file($_FILES['uolode_image']['tmp_name'], $uploadfile);
 	$sql=$pdo->prepare('insert into Shinkansen Values (NULL, ?, ?, ?, ?, ?, ?, ?, ?, ?)');
-	$sql->execute([$_POST['name'], $_POST['explanation'], $_POST['upload_image'], $_POST['vehicle'], 
+	$sql->execute([$_POST['name'], $_POST['explanation'], $uploadfile, $_POST['vehicle'], 
         $_POST['stop'], $_POST['zaseki'], $_POST['outlet'], $_POST['hanbai'], $_POST['category']]);
     $getfrommysql = mysql_fetch_assoc(mysql_query('SELECT * FROM Category'));
     $data = array();
