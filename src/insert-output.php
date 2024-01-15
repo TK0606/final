@@ -3,7 +3,7 @@
 	<?php
 	$pdo=new PDO($connect,USER,PASS);
     $uploadfile=$_FILES['upload_image']['name'];
-    move_uploaded_file($_FILES['uplode_image']['tmp_name'], $uploadfile);
+    move_uploaded_file($_FILES['upload_image']['tmp_name'], $uploadfile);
 	$sql=$pdo->prepare('insert into Shinkansen Values (NULL, ?, ?, ?, ?, ?, ?, ?, ?, ?)');
 	$sql->execute([$_POST['name'], $_POST['explanation'], $uploadfile, $_POST['vehicle'], 
         $_POST['stop'], $_POST['zaseki'], $_POST['outlet'], $_POST['hanbai'], $_POST['category']]);
