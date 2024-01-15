@@ -7,28 +7,8 @@
 	$sql=$pdo->prepare('insert into Shinkansen Values (NULL, ?, ?, ?, ?, ?, ?, ?, ?, ?)');
 	$sql->execute([$_POST['name'], $_POST['explanation'], $uploadfile, $_POST['vehicle'], 
                     $_POST['stop'], $_POST['zaseki'], $_POST['outlet'], $_POST['hanbai'], $_POST['category']]);
-        // MySQLi を使用してデータを取得
-        $mysqli = new mysqli("mysql220.phy.lolipop.jp", "LAA1517451", "PASS2201137", "LAA1517451-final");
-
-        // Check connection
-        if ($mysqli->connect_error) {
-            die("Connection failed: " . $mysqli->connect_error);
-        }
-        $result = mysql_query('SELECT * FROM Category');
-
-        $data = array();
-        $i = 1;
-        
-        while ($row = mysql_fetch_assoc($result)) {
-            // データをパースする
-            foreach ($row as $key => $value) {
-                $data[$i][$key] = htmlspecialchars(trim(urldecode(mb_convert_encoding($value, 'UTF-8', 'auto'))));
-            }
-            $i++;
-        }
     echo '<h1>登録しました</h1>';
-
-
+    
 		echo '名前：', $_POST['name'],'<br>';
 		echo '説明：', $_POST['explanation'] ,'<br>';
 		echo '画像：', $_POST['upload_image'],'<br>';
@@ -37,7 +17,7 @@
         echo '座席の種類：', $_POST['zaseki'],'<br>';
         echo 'コンセントの有無：', $_POST['outlet'],'<br>';
         echo '車内販売：', $_POST['hanbai'],'<br>';
-        echo 'カテゴリ：', $data[$i],'<br>';
+        echo 'カテゴリ：', $_POST['category'],'<br>';
     
     ?>
 	<br><br><br>
