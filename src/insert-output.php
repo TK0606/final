@@ -6,15 +6,19 @@
     move_uploaded_file($_FILES['upload_image']['tmp_name'], $uploadfile);
 	$sql=$pdo->prepare('insert into Shinkansen Values (NULL, ?, ?, ?, ?, ?, ?, ?, ?, ?)');
 	$sql->execute([$_POST['name'], $_POST['explanation'], $uploadfile, $_POST['vehicle'], 
-        $_POST['stop'], $_POST['zaseki'], $_POST['outlet'], $_POST['hanbai'], $_POST['category']]);
-    $getfrommysql = mysql_fetch_assoc(mysql_query('SELECT * FROM Category'));
-    $data = array();
-    $i = 1;
-    foreach($getfrommysql as $value) {
-    // 一応データをパースする
-    $data[$i] = htmlspecialchars(trim(urldecode(mb_convert_encoding($value, 'UTF-8', 'auto'))));
-    $i++;
-    }
+                    $_POST['stop'], $_POST['zaseki'], $_POST['outlet'], $_POST['hanbai'], $_POST['category']]);
+        $result = mysql_query('SELECT * FROM Category');
+
+        $data = array();
+        $i = 1;
+        
+        while ($row = mysql_fetch_assoc($result)) {
+            // データをパースする
+            foreach ($row as $key => $value) {
+                $data[$i][$key] = htmlspecialchars(trim(urldecode(mb_convert_encoding($value, 'UTF-8', 'auto'))));
+            }
+            $i++;
+        }
     echo '<h1>登録しました</h1>';
 
 
