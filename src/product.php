@@ -7,7 +7,7 @@
 $pdo=new PDO($connect,USER,PASS);
 $sql=$pdo->query('select * from Shinkansen');
 foreach($sql as $row){
-    echo '<p class=futosa>',$row['name'],'</p><br>';
+    echo '<a href="update.php?id=' . $row['shinkansen_id'] . '" class=futosa>',$row['name'],'</a><br>';
     echo $row['explanation'],'<br>';
     echo '<br>';
     echo '<img src="../img/',$row['image'],'" alt="', $row['name'],'"><br>';

@@ -3,4 +3,4 @@
 <a href="insert.php">登録</a>
 <a href="update.php">更新</a>
 <a href="delete.php">削除</a>
-<?php require 'header.php'; ?>
+<?php require 'footer.php'?>
