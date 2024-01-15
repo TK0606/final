@@ -11,6 +11,7 @@
                     $_POST['stop'], $_POST['zaseki'], $_POST['outlet'], $_POST['hanbai'], $_POST['category']]);
     $res=$pdo->prepare('select category_name from Category where category_id = ?');
     $res->execute([$_POST['category']]);
+    $categoryname=$res->fetch();
     echo '<h1>登録しました</h1>';
 
 		echo '名前：', $_POST['name'],'<br>';
@@ -21,7 +22,7 @@
         echo '座席の種類：', $_POST['zaseki'],'<br>';
         echo 'コンセントの有無：', $_POST['outlet'],'<br>';
         echo '車内販売：', $_POST['hanbai'],'<br>';
-        echo 'カテゴリ：', $res['category_name'],'<br>';
+        echo 'カテゴリ：', $categoryname['category_name'],'<br>';
     
     ?>
 	<br><br><br>
