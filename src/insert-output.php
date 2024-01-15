@@ -7,6 +7,13 @@
 	$sql=$pdo->prepare('insert into Shinkansen Values (NULL, ?, ?, ?, ?, ?, ?, ?, ?, ?)');
 	$sql->execute([$_POST['name'], $_POST['explanation'], $uploadfile, $_POST['vehicle'], 
                     $_POST['stop'], $_POST['zaseki'], $_POST['outlet'], $_POST['hanbai'], $_POST['category']]);
+        // MySQLi を使用してデータを取得
+        $mysqli = new mysqli("mysql220.phy.lolipop.jp", "LAA1517451", "PASS2201137", "LAA1517451-final");
+
+        // Check connection
+        if ($mysqli->connect_error) {
+            die("Connection failed: " . $mysqli->connect_error);
+        }
         $result = mysql_query('SELECT * FROM Category');
 
         $data = array();
