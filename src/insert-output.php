@@ -26,6 +26,6 @@
     
     ?>
 	<br><br><br>
-    <input type="button" class="button" onclick="location.href='insert.php'" value="続けて登録する">
-    
+    <input type="button" onclick="location.href='insert.php'" value="続けて登録する">
+    <input type="button" onclick="location.href='product.php'" value="一覧へ戻る">
     <?php require 'footer.php'; ?>
