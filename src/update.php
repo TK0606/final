@@ -56,12 +56,24 @@
 	}
 ?>"><br>
 カテゴリー<select name="category" >
+<option value="<?php
+						if (isset($res['category_id'])) {
+							echo $res['category_id'];
+						}
+						?>" selected hidden><?php
+						if (isset($res['category_name'])) {
+							echo $res['category_name'];
+						}else{
+							echo 'ねーよ！！';
+						}
+						?></option>
 <?php 
 foreach($sql2 as $row){
     echo '<option value="',$row['category_id'],'">',$row['category_name'],'</option>';
 }
 ?>
 </select>
-<button onclick="location.href='update_output.php?id=<?=$id?>'">更新
+<input type="submit" value="更新">
 </form>
+<button onclick="location.href='delete_output.php?id=<?=$id?>'">削除
 <?php require 'header.php'; ?>
