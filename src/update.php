@@ -15,7 +15,7 @@
 	$sql2=$pdo->query('select * from Category');
 	$res = $sql->fetch(PDO::FETCH_ASSOC);
 ?>
-<form action="update_output.php?id=<?=$id?>" method="POST" enctype="multipart/form-data">
+<form action="update-output.php?id=<?=$id?>" method="POST" enctype="multipart/form-data">
 名前<input type="text" name="name" value="<?php
 	if (isset($res['name'])) {
 		echo $res['name'];
@@ -74,5 +74,5 @@ foreach($sql2 as $row){
 </select><br>
 <input type="submit" value="更新">
 </form>
-<button onclick="location.href='delete_output.php?id=<?=$id?>'">削除
+<button onclick="location.href='delete-output.php?id=<?=$id?>'">削除
 <?php require 'header.php'; ?>
