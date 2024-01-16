@@ -9,9 +9,9 @@
 		"SELECT * FROM Shinkansen
 			LEFT JOIN Category
 			ON Shinkansen.category_id = Category.category_id
-			WHERE Shinkansen.shinkansen_id = $id
 		"
 	);
+	$sql2=$pdo->query('select * from Category');
 	$res = $sql->fetch(PDO::FETCH_ASSOC);
 ?>
 <form action="update_output.php?id=<?=$id?>" method="POST" enctype="multipart/form-data">
@@ -57,11 +57,11 @@
 ?>"><br>
 カテゴリー<select name="category" >
 <?php 
-foreach($sql as $row){
+foreach($sql2 as $row){
     echo '<option value="',$row['category_id'],'">',$row['category_name'],'</option>';
 }
 ?>
 </select>
-<input type="submit" value="更新">
-<button onclick="location.href=\'update_output.php\?id=' . $res['shinkansen_id'] . '\'">
+<button onclick="location.href='update_output.php?id=<?=$id?>'">更新
+</form>
 <?php require 'header.php'; ?>
