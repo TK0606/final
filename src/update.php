@@ -7,8 +7,8 @@
 	$id = $_GET['id'];
 	$sql = $db->query(
 		"SELECT * FROM Shinkansen
-			LEFT JOIN Categories
-			ON Shinkansen.category_id = Categories.category_id
+			LEFT JOIN Category
+			ON Shinkansen.category_id = Category.category_id
 			WHERE Shinkansen.product_id = $id
 		"
 	);
@@ -35,6 +35,33 @@
 		echo $res['vehicle'];
 	}
 ?>"><br>
+停車駅<textarea name="stop" value="<?php
+	if (isset($res['stop'])) {
+		echo $res['stop'];
+	}
+?>"></textarea><br>
+座席の種類<input type="text" name="zaseki" value="<?php
+	if (isset($res['zaseki'])) {
+		echo $res['zaseki'];
+	}
+?>"><br>
+コンセントの有無<textarea name="outlet" value="<?php
+	if (isset($res['outlet'])) {
+		echo $res['outlet'];
+	}
+?>"></textarea><br>
+車内販売<input type="text" name="hanbai" value="<?php
+	if (isset($res['hanbai'])) {
+		echo $res['hanbai'];
+	}
+?>"><br>
+カテゴリー<select name="category" >
+<?php 
+foreach($sql as $row){
+    echo '<option value="',$row['category_id'],'">',$row['category_name'],'</option>';
+}
+?>
+</select>
 <input type="submit" value="更新">
-<button class="shohin" onclick="location.href=\'goods_update.php\?id=' . $row['product_id'] . '\'">
+<button onclick="location.href=\'update_output.php\?id=' . $res['shinkansen_id'] . '\'">
 <?php require 'header.php'; ?>
