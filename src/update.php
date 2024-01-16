@@ -2,8 +2,8 @@
 <?php require 'db-connect.php'; ?>
 <a href="menu.php">メニューに戻る</a>
 <hr>
-<?php $pdo=new PDO($connect,USER,PASS) ?>;
 <?php
+	$pdo=new PDO($connect,USER,PASS);
 	$id = $_GET['id'];
 	$sql = $db->query(
 		"SELECT * FROM Shinkansen
