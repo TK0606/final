@@ -5,7 +5,7 @@
 <?php
 	$pdo=new PDO($connect,USER,PASS);
 	$id = $_GET['id'];
-	$sql = $db->query(
+	$sql = $pdo->query(
 		"SELECT * FROM Shinkansen
 			LEFT JOIN Category
 			ON Shinkansen.category_id = Category.category_id
