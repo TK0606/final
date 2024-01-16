@@ -21,11 +21,11 @@
 		echo $res['name'];
 	}
 ?>"><br>
-説明<textarea name="explanation" value="<?php
+説明<textarea name="explanation"><?php
 	if (isset($res['explanation'])) {
 		echo $res['explanation'];
 	}
-?>"></textarea><br>
+?></textarea><br>
 画像<input type="file" name="upload_image" accept="image/*" value="<?php
 	if (isset($res['image'])) {
 		echo $res['image'];
@@ -36,21 +36,21 @@
 		echo $res['vehicle'];
 	}
 ?>"><br>
-停車駅<textarea name="stop" value="<?php
+停車駅<textarea name="stop"><?php
 	if (isset($res['stop'])) {
 		echo $res['stop'];
 	}
-?>"></textarea><br>
+?></textarea><br>
 座席の種類<input type="text" name="zaseki" value="<?php
 	if (isset($res['zaseki'])) {
 		echo $res['zaseki'];
 	}
 ?>"><br>
-コンセントの有無<textarea name="outlet" value="<?php
+コンセントの有無<textarea name="outlet"><?php
 	if (isset($res['outlet'])) {
 		echo $res['outlet'];
 	}
-?>"></textarea><br>
+?></textarea><br>
 車内販売<input type="text" name="hanbai" value="<?php
 	if (isset($res['hanbai'])) {
 		echo $res['hanbai'];
