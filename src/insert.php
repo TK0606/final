@@ -22,6 +22,6 @@ foreach($sql as $row){
     echo '<option value="',$row['category_id'],'">',$row['category_name'],'</option>';
 }
 ?>
-</select>
+</select><br>
 <input type="submit" value="登録">
 <?php require 'header.php'; ?>

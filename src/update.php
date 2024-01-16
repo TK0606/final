@@ -71,7 +71,7 @@ foreach($sql2 as $row){
     echo '<option value="',$row['category_id'],'">',$row['category_name'],'</option>';
 }
 ?>
-</select>
+</select><br>
 <input type="submit" value="更新">
 </form>
 <button onclick="location.href='delete_output.php?id=<?=$id?>'">削除
