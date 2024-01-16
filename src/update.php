@@ -9,6 +9,7 @@
 		"SELECT * FROM Shinkansen
 			LEFT JOIN Category
 			ON Shinkansen.category_id = Category.category_id
+			WHERE Shinkansen.shinkansen_id = $id
 		"
 	);
 	$sql2=$pdo->query('select * from Category');
@@ -63,8 +64,6 @@
 						?>" selected hidden><?php
 						if (isset($res['category_name'])) {
 							echo $res['category_name'];
-						}else{
-							echo 'ねーよ！！';
 						}
 						?></option>
 <?php 
