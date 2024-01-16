@@ -9,7 +9,7 @@
 		"SELECT * FROM Shinkansen
 			LEFT JOIN Category
 			ON Shinkansen.category_id = Category.category_id
-			WHERE Shinkansen.product_id = $id
+			WHERE Shinkansen.shinkansen_id = $id
 		"
 	);
 	$res = $sql->fetch(PDO::FETCH_ASSOC);
