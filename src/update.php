@@ -26,11 +26,11 @@
 		echo $res['explanation'];
 	}
 ?></textarea><br>
-画像<input type="file" name="upload_image" accept="image/*" value="<?php
+画像<input type="file" name="upload_image" accept="image/*"><?php
 	if (isset($res['image'])) {
 		echo $res['image'];
 	}
-?>"><br>
+?><br>
 使用車両<input type="text" name="vehicle" value="<?php
 	if (isset($res['vehicle'])) {
 		echo $res['vehicle'];
