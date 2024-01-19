@@ -4,7 +4,7 @@
     $pdo=new PDO($connect,USER,PASS);
     $id = $_GET['id'];
 	
-    $stmt = $db->prepare("DELETE FROM Shinkansen 
+    $stmt = $pdo->prepare("DELETE FROM Shinkansen 
                             WHERE Shinkansen_id = $id ");
     $stmt->execute();
 ?>
