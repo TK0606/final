@@ -24,4 +24,4 @@ foreach($sql as $row){
 ?>
 </select><br>
 <input type="submit" value="登録">
-<?php require 'header.php'; ?>
+<?php require 'footer.php'; ?>
