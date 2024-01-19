@@ -16,47 +16,47 @@
 	$res = $sql->fetch(PDO::FETCH_ASSOC);
 ?>
 <form action="update-output.php?id=<?=$id?>" method="POST" enctype="multipart/form-data">
-<span>名前</span><input type="text" name="name" value="<?php
+名前<br><input type="text" name="name" value="<?php
 	if (isset($res['name'])) {
 		echo $res['name'];
 	}
 ?>"><br>
-<span>説明</span><textarea name="explanation" cols="130" rows="4"><?php
+説明<br><textarea name="explanation" cols="130" rows="4"><?php
 	if (isset($res['explanation'])) {
 		echo $res['explanation'];
 	}
 ?></textarea><br>
-<span>画像</span><input type="file" name="upload_image" accept="image/*" value="<?php
+画像<br><input type="file" name="upload_image" accept="image/*" value="<?php
 	if (isset($res['image'])) {
 		echo $res['image'];
 	}
 ?>"><br>
-<span>使用車両</span><input type="text" name="vehicle" value="<?php
+使用車両<br><input type="text" name="vehicle" value="<?php
 	if (isset($res['vehicle'])) {
 		echo $res['vehicle'];
 	}
 ?>"><br>
-<span>停車駅</span><textarea name="stop" cols="70" rows="4"><?php
+停車駅<br><textarea name="stop" cols="130" rows="4"><?php
 	if (isset($res['stop'])) {
 		echo $res['stop'];
 	}
 ?></textarea><br>
-<span>座席の種類</span><textarea name="zaseki" cols="70" rows="4"><?php
+座席の種類<br><textarea name="zaseki" cols="130" rows="4"><?php
 	if (isset($res['zaseki'])) {
 		echo $res['zaseki'];
 	}
 ?><br>
-<span>コンセントの有無</span><textarea name="outlet" cols="70" rows="4"><?php
+コンセントの有無<br><textarea name="outlet" cols="130" rows="4"><?php
 	if (isset($res['outlet'])) {
 		echo $res['outlet'];
 	}
 ?></textarea><br>
-<span>車内販売</span><input type="text" name="hanbai" value="<?php
+車内販売<br><input type="text" name="hanbai" value="<?php
 	if (isset($res['hanbai'])) {
 		echo $res['hanbai'];
 	}
 ?>"><br>
-<span>カテゴリー</span><select name="category" >
+カテゴリー<br><select name="category" >
 <option value="<?php
 						if (isset($res['category_id'])) {
 							echo $res['category_id'];
