@@ -45,7 +45,7 @@
 	if (isset($res['zaseki'])) {
 		echo $res['zaseki'];
 	}
-?><br>
+?></textarea><br>
 コンセントの有無<br><textarea name="outlet" cols="130" rows="4"><?php
 	if (isset($res['outlet'])) {
 		echo $res['outlet'];
