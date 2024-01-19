@@ -1,4 +1,5 @@
 <?php require 'header.php'; ?>
+<link rel="stylesheet" href="../css/update.css">
 <?php require 'db-connect.php'; ?>
 <a href="menu.php">メニューに戻る</a>
 <hr>
