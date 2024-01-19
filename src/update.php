@@ -73,7 +73,7 @@ foreach($sql2 as $row){
 }
 ?>
 </select><br>
-<input type="submit" value="更新">
+<input type="submit" class="submit" value="更新">
 </form>
 <button onclick="location.href='delete.php?id=<?=$id?>'">削除
 <?php require 'footer.php'; ?>
