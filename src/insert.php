@@ -7,15 +7,15 @@
 $pdo=new PDO($connect,USER,PASS);
 $sql=$pdo->query('select * from Category');
 ?>
-<p>名前</p><input type="text" name="name" required><br>
-<p>説明</p><textarea name="explanation" cols="70" rows="4" required></textarea><br>
-<p>画像</p><input type="file" name="upload_image" accept="image/*" required><br>
-<p>使用車両</p><input type="text" name="vehicle" required><br>
-<p>停車駅</p><textarea name="stop" cols="70" rows="4" required></textarea><br>
-<p>座席の種類</p><textarea name="zaseki" cols="70" rows="4" required></textarea><br>
-<p>コンセントの有無</p><textarea name="outlet" cols="70" rows="4" required></textarea><br>
-<p>車内販売</p><input type="text" name="hanbai" required><br>
-<p>カテゴリー</p><select name="category" required>
+<span>名前</span><input type="text" name="name" required><br>
+<span>説明</span><textarea name="explanation" cols="130" rows="4" required></textarea><br>
+<span>画像</span><input type="file" name="upload_image" accept="image/*" required><br>
+<span>使用車両</span><input type="text" name="vehicle" required><br>
+<span>停車駅</span><textarea name="stop" cols="130" rows="4" required></textarea><br>
+<span>座席の種類</span><textarea name="zaseki" cols="130" rows="4" required></textarea><br>
+<span>コンセントの有無</span><textarea name="outlet" cols="130" rows="4" required></textarea><br>
+<span>車内販売</span><input type="text" name="hanbai" required><br>
+<span>カテゴリー</span><select name="category" required>
 <option value="" selected hidden required>選択してください</option>
 <?php 
 foreach($sql as $row){
