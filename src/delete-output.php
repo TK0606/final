@@ -1,5 +1,6 @@
 <?php require 'header.php' ?>
 <?php require 'db-connect.php'; ?>
+<link rel="stylesheet" href="../css/delete.css">
 <?php
     $pdo=new PDO($connect,USER,PASS);
     $id = $_GET['id'];

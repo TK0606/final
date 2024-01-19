@@ -1,4 +1,5 @@
 <?php require 'header.php'; ?>
+<link rel="stylesheet" href="../css/delete.css">
 <a href="menu.php">メニューに戻る</a>
 <hr>
 <?php
