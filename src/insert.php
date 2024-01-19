@@ -7,15 +7,15 @@
 $pdo=new PDO($connect,USER,PASS);
 $sql=$pdo->query('select * from Category');
 ?>
-名前<input type="text" name="name" required><br>
-説明<textarea name="explanation" required></textarea><br>
-画像<input type="file" name="upload_image" accept="image/*" required><br>
-使用車両<input type="text" name="vehicle" required><br>
-停車駅<textarea name="stop" required></textarea><br>
-座席の種類<input type="text" name="zaseki" required><br>
-コンセントの有無<textarea name="outlet" required></textarea><br>
-車内販売<input type="text" name="hanbai" required><br>
-カテゴリー<select name="category" required>
+<p>名前</p><input type="text" name="name" required><br>
+<p>説明</p><textarea name="explanation" cols="70" rows="4" required></textarea><br>
+<p>画像</p><input type="file" name="upload_image" accept="image/*" required><br>
+<p>使用車両</p><input type="text" name="vehicle" required><br>
+<p>停車駅</p><textarea name="stop" cols="70" rows="4" required></textarea><br>
+<p>座席の種類</p><textarea name="zaseki" cols="70" rows="4" required></textarea><br>
+<p>コンセントの有無</p><textarea name="outlet" cols="70" rows="4" required></textarea><br>
+<p>車内販売</p><input type="text" name="hanbai" required><br>
+<p>カテゴリー</p><select name="category" required>
 <option value="" selected hidden required>選択してください</option>
 <?php 
 foreach($sql as $row){

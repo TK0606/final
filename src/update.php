@@ -16,47 +16,47 @@
 	$res = $sql->fetch(PDO::FETCH_ASSOC);
 ?>
 <form action="update-output.php?id=<?=$id?>" method="POST" enctype="multipart/form-data">
-名前<input type="text" name="name" value="<?php
+<p>名前</p><input type="text" name="name" value="<?php
 	if (isset($res['name'])) {
 		echo $res['name'];
 	}
 ?>"><br>
-説明<textarea name="explanation"><?php
+<p>説明</p><textarea name="explanation" cols="70" rows="4"><?php
 	if (isset($res['explanation'])) {
 		echo $res['explanation'];
 	}
 ?></textarea><br>
-画像<input type="file" name="upload_image" accept="image/*" value="<?php
+<p>画像</p><input type="file" name="upload_image" accept="image/*" value="<?php
 	if (isset($res['image'])) {
 		echo $res['image'];
 	}
 ?>"><br>
-使用車両<input type="text" name="vehicle" value="<?php
+<p>使用車両</p><input type="text" name="vehicle" value="<?php
 	if (isset($res['vehicle'])) {
 		echo $res['vehicle'];
 	}
 ?>"><br>
-停車駅<textarea name="stop"><?php
+<p>停車駅</p><textarea name="stop" cols="70" rows="4"><?php
 	if (isset($res['stop'])) {
 		echo $res['stop'];
 	}
 ?></textarea><br>
-座席の種類<input type="text" name="zaseki" value="<?php
+<p>座席の種類</p><textarea name="zaseki" cols="70" rows="4"><?php
 	if (isset($res['zaseki'])) {
 		echo $res['zaseki'];
 	}
-?>"><br>
-コンセントの有無<textarea name="outlet"><?php
+?><br>
+<p>コンセントの有無</p><textarea name="outlet" cols="70" rows="4"><?php
 	if (isset($res['outlet'])) {
 		echo $res['outlet'];
 	}
 ?></textarea><br>
-車内販売<input type="text" name="hanbai" value="<?php
+<p>車内販売</p><input type="text" name="hanbai" value="<?php
 	if (isset($res['hanbai'])) {
 		echo $res['hanbai'];
 	}
 ?>"><br>
-カテゴリー<select name="category" >
+<p>カテゴリー</p><select name="category" >
 <option value="<?php
 						if (isset($res['category_id'])) {
 							echo $res['category_id'];
